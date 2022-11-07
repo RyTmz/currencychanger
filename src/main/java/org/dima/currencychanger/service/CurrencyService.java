@@ -24,10 +24,7 @@ public class CurrencyService {
     }
     public void addAllCurencies(){
         List<Date> localDates = currencyRepository.getLastDate();
-        if(checkTable() && currencyRepository.getLastDate().get(0).equals(Date.from(XMLParcer.getActuallyDate().atStartOfDay(ZoneId.systemDefault()).toInstant()))){
-
-        }
-        else {
+        if(!(checkTable() && currencyRepository.getLastDate().get(0).equals(Date.from(XMLParcer.getActuallyDate().atStartOfDay(ZoneId.systemDefault()).toInstant())))){
             Currency currency = new Currency("1", "643", "RUB", 1, "Российский рубль", XMLParcer.getActuallyDate());
             currency.setValue(1.0);
             XMLParcer.getAllCurrencies().add(currency);
