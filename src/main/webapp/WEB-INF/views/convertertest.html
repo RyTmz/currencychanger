@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер Валют</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/5.5.2/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/5.5.2/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+</head>
+<body>
+
+<div id="feedback"></div>
+<form class = "listForm" id="convertForm">
+    <div class="selectors">
+        <h1>Конвертер</h1>
+        <div class = "form-inline">
+            <select class = "form-control" style="width: 350px" id = "currency1" th:field="*{currencies}">
+                <option style="width: 300px" th:each="currency: ${currencies}" th:value="${currency.charCode}" th:utext="${currency.charCode} + ' (' +${currency.name} + ')'"></option>
+            </select>
+            <select class = "form-control" style="width: 350px" id = "currency2" th:field="*{currencies}">
+                <option th:each="currency: ${currencies}" th:value="${currency.charCode}" th:utext="${currency.charCode} + ' (' +${currency.name} + ')'"></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-inline">
+        <input type="text" style="width: 350px" class="form-control" id="quantity"/>
+        <input type="text" style="width: 350px" class="form-control" id="result">
+    </div>
+
+
+   <button type="submit" id="btn-convert"-->
+            class="btn btn-primary btn-lg"-->
+    onclick="location.href='/converter.html'">Конвертировать-->
+   </button>-->
+
+</form>
+</body>
+</html>

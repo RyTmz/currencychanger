@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: gords
+Build-Jdk: Amazon Corretto version 11.0.17
+Implementation-Title: currencychanger Maven Webapp
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: ru.dima.currencychanger
+Main-Class: ${start-class}
+
